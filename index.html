@@ -152,11 +152,16 @@
       object-fit: cover;
     }
     @media (max-width: 900px) {
-      .wrap { grid-template-columns: 1fr; }
-      .player-card { order: 2; }
-      .left { order: 1; }
+      .wrap { grid-template-columns: 1fr; gap: 1rem; min-height: auto; }
+      .left { order: 1; gap: 1rem; }
+      .player-card { order: 2; min-height: auto; padding: .75rem; }
+      .screen { min-height: 52vh; aspect-ratio: 16 / 11; }
+      .buzzer-shell { width: min(84vw, 360px); }
+      .buzzer { font-size: clamp(.85rem, 3.4vw, 1.25rem); }
       .spark { display: none; }
+      body { padding: .75rem; }
     }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { transition-duration: .01ms !important; }
     }
