@@ -134,6 +134,13 @@
       gap: 1rem;
       min-height: 72vh;
     }
+    .player-label {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(.8rem, .75rem + .2vw, 1rem);
+      line-height: 1.6;
+      text-transform: uppercase;
+    }
     .screen {
       position: relative;
       width: 100%;
@@ -155,11 +162,15 @@
       .wrap { grid-template-columns: 1fr; gap: 1rem; min-height: auto; }
       .left { order: 1; gap: 1rem; }
       .player-card { order: 2; min-height: auto; padding: .75rem; }
-      .screen { min-height: 52vh; aspect-ratio: 9 / 16; }
+      .screen { min-height: 52vh; aspect-ratio: 16 / 9; }
       .buzzer-shell { width: min(84vw, 360px); }
       .buzzer { font-size: clamp(.85rem, 3.4vw, 1.25rem); }
       .spark { display: none; }
       body { padding: .75rem; }
+    }
+
+    @media (max-width: 900px) and (orientation: landscape) {
+      .screen { aspect-ratio: 16 / 9; min-height: 42vh; }
     }
 
     @media (prefers-reduced-motion: reduce) {
