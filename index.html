@@ -56,28 +56,6 @@
       gap: 1.6rem;
       text-align: center;
     }
-    h1 {
-      margin: 0;
-      font-family: var(--font-display);
-      font-size: clamp(1.9rem, 1.15rem + 3vw, 4.4rem);
-      line-height: 1.15;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-      color: var(--yellow);
-      text-shadow: 0 3px 0 #fff, 0 6px 0 var(--orange), 0 9px 0 var(--blue), 0 12px 0 var(--ink);
-      transform: rotate(-2deg);
-    }
-    .subtitle {
-      margin: 0;
-      font-size: clamp(1rem, .92rem + .5vw, 1.3rem);
-      font-weight: 700;
-      max-width: 24ch;
-      background: var(--panel);
-      border: 4px solid var(--ink);
-      border-radius: 999px;
-      padding: .8rem 1.2rem;
-      box-shadow: 0 8px 0 var(--ink);
-    }
     .buzzer-shell {
       position: relative;
       width: min(100%, 420px);
@@ -171,7 +149,7 @@
       height: 100%;
       display: block;
       background: #000;
-      object-fit: contain;
+      object-fit: cover;
     }
     @media (max-width: 900px) {
       .wrap { grid-template-columns: 1fr; gap: 1rem; min-height: auto; }
@@ -202,6 +180,7 @@
           bonne<br>journée
         </button>
       </div>
+
     </section>
 
     <section class="player-card" aria-labelledby="lecteur-titre">
