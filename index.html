@@ -197,13 +197,11 @@
       .spark { display: none; }
       body { padding: .75rem; }
     }
-
-            @media (max-width: 900px) and (orientation: landscape) {
+    @media (max-width: 900px) and (orientation: landscape) {
       .screen { aspect-ratio: 16 / 9; min-height: 42vh; }
       .screen video { object-fit: contain; }
     }
-
-@media (prefers-reduced-motion: reduce) {
+    @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { transition-duration: .01ms !important; }
     }
   </style>
@@ -221,7 +219,6 @@
           bonne<br>journée
         </button>
       </div>
-
     </section>
 
     <section class="player-card" aria-labelledby="lecteur-titre">
@@ -255,6 +252,17 @@
       videoPlayer.play().catch(() => {});
     }
 
+    function adaptVerticalVideo() {
+      const ratio = videoPlayer.videoWidth && videoPlayer.videoHeight ? videoPlayer.videoWidth / videoPlayer.videoHeight : null;
+      if (ratio && ratio < 1) {
+        videoPlayer.style.transform = 'scale(1.3)';
+        videoPlayer.style.transformOrigin = 'center center';
+      } else {
+        videoPlayer.style.transform = 'scale(1)';
+      }
+    }
+
+    videoPlayer.addEventListener('loadedmetadata', adaptVerticalVideo);
     playButton.addEventListener('click', loadRandomVideo);
   </script>
 </body>
