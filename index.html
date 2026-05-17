@@ -166,8 +166,8 @@
     .screen {
       position: relative;
       width: 100%;
-      aspect-ratio: 16 / 10;
-      min-height: 62vh;
+      aspect-ratio: 16 / 9;
+      min-height: 58vh;
       border: 5px solid var(--ink);
       border-radius: 20px;
       overflow: hidden;
@@ -191,17 +191,19 @@
       .wrap { grid-template-columns: 1fr; gap: 1rem; min-height: auto; }
       .left { order: 1; gap: 1rem; }
       .player-card { order: 2; min-height: auto; padding: .75rem; }
-      .screen { min-height: 52vh; aspect-ratio: 9 / 16; }
+      .screen { min-height: 52vh; aspect-ratio: 16 / 9; }
       .buzzer-shell { width: min(84vw, 360px); }
       .buzzer { font-size: clamp(.85rem, 3.4vw, 1.25rem); }
       .spark { display: none; }
       body { padding: .75rem; }
     }
-    @media (max-width: 900px) and (orientation: landscape) {
-      .screen { aspect-ratio: 9 / 16; min-height: 42vh; }
+
+            @media (max-width: 900px) and (orientation: landscape) {
+      .screen { aspect-ratio: 16 / 9; min-height: 42vh; }
       .screen video { object-fit: contain; }
     }
-    @media (prefers-reduced-motion: reduce) {
+
+@media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { transition-duration: .01ms !important; }
     }
   </style>
@@ -219,6 +221,7 @@
           bonne<br>journée
         </button>
       </div>
+
     </section>
 
     <section class="player-card" aria-labelledby="lecteur-titre">
